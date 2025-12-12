@@ -1,38 +1,38 @@
 {
   "users": [
     {
-      "id": "u1",
+      "id": 1,
       "name": "Ирина Петрова",
       "role": "ADMIN",
-      "branchScope": ["br_1", "br_2"]
+      "branchScope": [1, 2]
     },
     {
-      "id": "u2",
+      "id": 2,
       "name": "Доктор Иванов",
       "role": "DOCTOR",
-      "branchScope": ["br_1"]
+      "branchScope": [1]
     },
     {
-      "id": "u3",
+      "id": 3,
       "name": "Главный врач Сидоров",
       "role": "HEAD",
-      "branchScope": ["br_1", "br_2"]
+      "branchScope": [1, 2]
     },
     {
-      "id": "u4",
+      "id": 4,
       "name": "Системный администратор",
       "role": "SYSADMIN",
-      "branchScope": ["br_1", "br_2"]
+      "branchScope": [1, 2]
     }
   ],
   "me": [
     {
       "user": {
-        "id": "u1",
+        "id": 1,
         "name": "Ирина Петрова",
         "role": "ADMIN"
       },
-      "branchScope": ["br_1", "br_2"],
+      "branchScope": [1, 2],
       "permissions": {
         "canViewFinance": true,
         "canEditFinance": true,
@@ -45,13 +45,13 @@
   ],
   "branches": [
     {
-      "id": "br_1",
+      "id": 1,
       "name": "Центральный филиал",
       "address": "г. Москва, ул. Ленина, д. 10",
       "phone": "+7 (495) 123-45-67"
     },
     {
-      "id": "br_2",
+      "id": 2,
       "name": "Филиал на Парковой",
       "address": "г. Москва, ул. Парковая, д. 5",
       "phone": "+7 (495) 234-56-78"
@@ -59,90 +59,75 @@
   ],
   "rooms": [
     {
-      "id": "room_1",
-      "branchId": "br_1",
+      "id": 1,
+      "branchId": 1,
       "name": "Кабинет 1",
       "number": "101"
     },
     {
-      "id": "room_2",
-      "branchId": "br_1",
+      "id": 2,
+      "branchId": 1,
       "name": "Кабинет 2",
       "number": "102"
     },
     {
-      "id": "room_3",
-      "branchId": "br_2",
+      "id": 3,
+      "branchId": 2,
       "name": "Кабинет 1",
       "number": "201"
     }
   ],
   "services": [
     {
-      "id": "srv_1",
-      "branchId": "br_1",
+      "id": 1,
+      "branchId": 1,
       "name": "Приём невролога",
       "price": 4500,
       "durationMin": 30,
       "inventoryAutoWriteOff": [
         {
-          "inventoryItemId": "inv_11",
+          "inventoryItemId": 11,
           "qty": 1
         }
       ]
     },
     {
-      "id": "srv_2",
-      "branchId": "br_1",
+      "id": 2,
+      "branchId": 1,
       "name": "Консультация терапевта",
       "price": 3000,
       "durationMin": 20,
-      "inventoryAutoWriteOff": []
-    },
-    {
-      "id": "srv_3",
-      "branchId": "br_2",
-      "name": "Приём невролога",
-      "price": 4500,
-      "durationMin": 30,
       "inventoryAutoWriteOff": []
     }
   ],
   "patients": [
     {
-      "id": "pt_1",
+      "id": 1,
       "fullName": "Иванов Иван Иванович",
       "phone": "+7 (999) 123-45-67",
       "icons": ["ICON_VIP", "ICON_CALL"],
       "dob": "1990-01-15"
     },
     {
-      "id": "pt_2",
+      "id": 2,
       "fullName": "Петрова Мария Сергеевна",
       "phone": "+7 (999) 234-56-78",
       "icons": [],
       "dob": "1985-05-20"
-    },
-    {
-      "id": "pt_3",
-      "fullName": "Сидоров Петр Александрович",
-      "phone": "+7 (999) 345-67-89",
-      "icons": ["ICON_VIP"],
-      "dob": "1978-11-10"
     }
   ],
   "appointments": [
     {
-      "id": "apt_1",
-      "branchId": "br_1",
-      "doctorId": "doc_1",
-      "roomId": "room_2",
+      "id": 1,
+      "branchId": 1,
+      "doctorId": 1,
+      "roomId": 2,
       "start": "2025-12-12T09:00:00Z",
       "end": "2025-12-12T09:30:00Z",
       "status": "BOOKED",
       "source": "FRONT_DESK",
       "patient": {
-        "id": "pt_1",
+        "id": 1,
         "fullName": "Иванов Иван Иванович",
         "phone": "+7 (999) 123-45-67",
         "icons": ["ICON_VIP", "ICON_CALL"]
@@ -159,16 +144,16 @@
       }
     },
     {
-      "id": "apt_2",
-      "branchId": "br_1",
-      "doctorId": "doc_1",
-      "roomId": "room_1",
+      "id": 2,
+      "branchId": 1,
+      "doctorId": 1,
+      "roomId": 1,
       "start": "2025-12-12T10:00:00Z",
       "end": "2025-12-12T10:30:00Z",
       "status": "CONFIRMED",
       "source": "ONLINE",
       "patient": {
-        "id": "pt_2",
+        "id": 2,
         "fullName": "Петрова Мария Сергеевна",
         "phone": "+7 (999) 234-56-78",
         "icons": []
@@ -183,63 +168,11 @@
           "partial": false
         }
       }
-    },
-    {
-      "id": "apt_3",
-      "branchId": "br_1",
-      "doctorId": "doc_2",
-      "roomId": "room_2",
-      "start": "2025-12-12T11:00:00Z",
-      "end": "2025-12-12T11:20:00Z",
-      "status": "ARRIVED",
-      "source": "FRONT_DESK",
-      "patient": {
-        "id": "pt_3",
-        "fullName": "Сидоров Петр Александрович",
-        "phone": "+7 (999) 345-67-89",
-        "icons": ["ICON_VIP"]
-      },
-      "payment": {
-        "total": 3000,
-        "paid": 3000,
-        "method": "CASH",
-        "flags": {
-          "noCashbox": false,
-          "payLater": false,
-          "partial": false
-        }
-      }
-    },
-    {
-      "id": "apt_4",
-      "branchId": "br_2",
-      "doctorId": "doc_3",
-      "roomId": "room_3",
-      "start": "2025-12-12T14:00:00Z",
-      "end": "2025-12-12T14:30:00Z",
-      "status": "CANCELED",
-      "source": "ONLINE",
-      "patient": {
-        "id": "pt_1",
-        "fullName": "Иванов Иван Иванович",
-        "phone": "+7 (999) 123-45-67",
-        "icons": ["ICON_VIP", "ICON_CALL"]
-      },
-      "payment": {
-        "total": 4500,
-        "paid": 0,
-        "method": null,
-        "flags": {
-          "noCashbox": false,
-          "payLater": false,
-          "partial": false
-        }
-      }
     }
   ],
   "medicalRecords": [
     {
-      "appointmentId": "apt_1",
+      "appointmentId": 1,
       "locked": false,
       "lockReason": null,
       "sections": {
@@ -263,7 +196,7 @@
       }
     },
     {
-      "appointmentId": "apt_3",
+      "appointmentId": 2,
       "locked": false,
       "lockReason": null,
       "sections": {
@@ -283,14 +216,14 @@
       "signature": {
         "status": "SIGNED",
         "signedAt": "2025-12-12T11:30:00Z",
-        "signedBy": "doc_2"
+        "signedBy": 2
       }
     }
   ],
   "inventoryItems": [
     {
-      "id": "inv_1",
-      "branchId": "br_1",
+      "id": 1,
+      "branchId": 1,
       "name": "Гель для УЗИ",
       "category": "MED_CONSUMABLES",
       "unit": "pcs",
@@ -298,8 +231,8 @@
       "minStock": 10
     },
     {
-      "id": "inv_2",
-      "branchId": "br_1",
+      "id": 2,
+      "branchId": 1,
       "name": "Парацетамол 500мг",
       "category": "DRUGS",
       "unit": "pcs",
@@ -307,17 +240,8 @@
       "minStock": 50
     },
     {
-      "id": "inv_3",
-      "branchId": "br_1",
-      "name": "Одноразовые перчатки",
-      "category": "MED_CONSUMABLES",
-      "unit": "pcs",
-      "stock": 500,
-      "minStock": 200
-    },
-    {
-      "id": "inv_4",
-      "branchId": "br_1",
+      "id": 3,
+      "branchId": 1,
       "name": "Тонометр автоматический",
       "category": "MED_DEVICES",
       "unit": "pcs",
@@ -325,17 +249,8 @@
       "minStock": 2
     },
     {
-      "id": "inv_5",
-      "branchId": "br_2",
-      "name": "Гель для УЗИ",
-      "category": "MED_CONSUMABLES",
-      "unit": "pcs",
-      "stock": 30,
-      "minStock": 10
-    },
-    {
-      "id": "inv_11",
-      "branchId": "br_1",
+      "id": 11,
+      "branchId": 1,
       "name": "Одноразовая пеленка",
       "category": "MED_CONSUMABLES",
       "unit": "pcs",
@@ -346,11 +261,11 @@
   "audit": [
     {
       "ts": "2025-12-12T08:00:00Z",
-      "userId": "u1",
+      "userId": 1,
       "action": "APPOINTMENT_CREATE",
       "entityType": "APPOINTMENT",
-      "entityId": "apt_1",
-      "branchId": "br_1",
+      "entityId": 1,
+      "branchId": 1,
       "diff": {
         "status": {
           "from": null,
@@ -360,29 +275,15 @@
     },
     {
       "ts": "2025-12-12T09:15:00Z",
-      "userId": "u2",
+      "userId": 2,
       "action": "APPOINTMENT_STATUS_CHANGE",
       "entityType": "APPOINTMENT",
-      "entityId": "apt_2",
-      "branchId": "br_1",
+      "entityId": 2,
+      "branchId": 1,
       "diff": {
         "status": {
           "from": "BOOKED",
           "to": "CONFIRMED"
-        }
-      }
-    },
-    {
-      "ts": "2025-12-12T10:30:00Z",
-      "userId": "u1",
-      "action": "PATIENT_UPDATE",
-      "entityType": "PATIENT",
-      "entityId": "pt_1",
-      "branchId": "br_1",
-      "diff": {
-        "phone": {
-          "from": "+7 (999) 123-45-66",
-          "to": "+7 (999) 123-45-67"
         }
       }
     }
@@ -405,44 +306,38 @@
       "emoji": "💳",
       "label": "Скидка",
       "isActive": true
-    },
-    {
-      "id": "ICON_ALLERGY",
-      "emoji": "⚠️",
-      "label": "Аллергия",
-      "isActive": true
     }
   ],
   "files": [
     {
-      "id": "f_1",
+      "id": 1,
       "title": "Результаты МРТ.pdf",
       "kind": "PDF",
       "size": 123456,
       "createdAt": "2025-12-10T10:00:00Z",
-      "createdBy": "u2",
+      "createdBy": 2,
       "entityType": "APPOINTMENT",
-      "entityId": "apt_1",
-      "downloadUrl": "/api/v1/files/f_1/download",
-      "previewUrl": "/api/v1/files/f_1/preview"
+      "entityId": 1,
+      "downloadUrl": "/api/v1/files/1/download",
+      "previewUrl": "/api/v1/files/1/preview"
     },
     {
-      "id": "f_2",
+      "id": 2,
       "title": "Анализ крови.jpg",
       "kind": "IMAGE",
       "size": 45678,
       "createdAt": "2025-12-11T14:30:00Z",
-      "createdBy": "u1",
+      "createdBy": 1,
       "entityType": "PATIENT",
-      "entityId": "pt_2",
-      "downloadUrl": "/api/v1/files/f_2/download",
-      "previewUrl": "/api/v1/files/f_2/preview"
+      "entityId": 2,
+      "downloadUrl": "/api/v1/files/2/download",
+      "previewUrl": "/api/v1/files/2/preview"
     }
   ],
   "scheduleSlots": [
     {
-      "doctorId": "doc_1",
-      "branchId": "br_1",
+      "doctorId": 1,
+      "branchId": 1,
       "from": "2025-12-12T00:00:00Z",
       "to": "2025-12-13T00:00:00Z",
       "slots": [
@@ -450,7 +345,7 @@
           "start": "2025-12-12T09:00:00Z",
           "end": "2025-12-12T09:30:00Z",
           "free": false,
-          "appointmentId": "apt_1"
+          "appointmentId": 1
         },
         {
           "start": "2025-12-12T09:30:00Z",
@@ -461,7 +356,7 @@
           "start": "2025-12-12T10:00:00Z",
           "end": "2025-12-12T10:30:00Z",
           "free": false,
-          "appointmentId": "apt_2"
+          "appointmentId": 2
         }
       ]
     }
