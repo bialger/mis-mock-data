@@ -1,0 +1,469 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "Ирина Петрова",
+      "role": "ADMIN",
+      "branchScope": ["br_1", "br_2"]
+    },
+    {
+      "id": "u2",
+      "name": "Доктор Иванов",
+      "role": "DOCTOR",
+      "branchScope": ["br_1"]
+    },
+    {
+      "id": "u3",
+      "name": "Главный врач Сидоров",
+      "role": "HEAD",
+      "branchScope": ["br_1", "br_2"]
+    },
+    {
+      "id": "u4",
+      "name": "Системный администратор",
+      "role": "SYSADMIN",
+      "branchScope": ["br_1", "br_2"]
+    }
+  ],
+  "me": [
+    {
+      "user": {
+        "id": "u1",
+        "name": "Ирина Петрова",
+        "role": "ADMIN"
+      },
+      "branchScope": ["br_1", "br_2"],
+      "permissions": {
+        "canViewFinance": true,
+        "canEditFinance": true,
+        "canViewInventory": true,
+        "canWriteInventory": true,
+        "canManualEgiszSend": false,
+        "canEditBackdateDays": 90
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "br_1",
+      "name": "Центральный филиал",
+      "address": "г. Москва, ул. Ленина, д. 10",
+      "phone": "+7 (495) 123-45-67"
+    },
+    {
+      "id": "br_2",
+      "name": "Филиал на Парковой",
+      "address": "г. Москва, ул. Парковая, д. 5",
+      "phone": "+7 (495) 234-56-78"
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room_1",
+      "branchId": "br_1",
+      "name": "Кабинет 1",
+      "number": "101"
+    },
+    {
+      "id": "room_2",
+      "branchId": "br_1",
+      "name": "Кабинет 2",
+      "number": "102"
+    },
+    {
+      "id": "room_3",
+      "branchId": "br_2",
+      "name": "Кабинет 1",
+      "number": "201"
+    }
+  ],
+  "services": [
+    {
+      "id": "srv_1",
+      "branchId": "br_1",
+      "name": "Приём невролога",
+      "price": 4500,
+      "durationMin": 30,
+      "inventoryAutoWriteOff": [
+        {
+          "inventoryItemId": "inv_11",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "id": "srv_2",
+      "branchId": "br_1",
+      "name": "Консультация терапевта",
+      "price": 3000,
+      "durationMin": 20,
+      "inventoryAutoWriteOff": []
+    },
+    {
+      "id": "srv_3",
+      "branchId": "br_2",
+      "name": "Приём невролога",
+      "price": 4500,
+      "durationMin": 30,
+      "inventoryAutoWriteOff": []
+    }
+  ],
+  "patients": [
+    {
+      "id": "pt_1",
+      "fullName": "Иванов Иван Иванович",
+      "phone": "+7 (999) 123-45-67",
+      "icons": ["ICON_VIP", "ICON_CALL"],
+      "dob": "1990-01-15"
+    },
+    {
+      "id": "pt_2",
+      "fullName": "Петрова Мария Сергеевна",
+      "phone": "+7 (999) 234-56-78",
+      "icons": [],
+      "dob": "1985-05-20"
+    },
+    {
+      "id": "pt_3",
+      "fullName": "Сидоров Петр Александрович",
+      "phone": "+7 (999) 345-67-89",
+      "icons": ["ICON_VIP"],
+      "dob": "1978-11-10"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "apt_1",
+      "branchId": "br_1",
+      "doctorId": "doc_1",
+      "roomId": "room_2",
+      "start": "2025-12-12T09:00:00Z",
+      "end": "2025-12-12T09:30:00Z",
+      "status": "BOOKED",
+      "source": "FRONT_DESK",
+      "patient": {
+        "id": "pt_1",
+        "fullName": "Иванов Иван Иванович",
+        "phone": "+7 (999) 123-45-67",
+        "icons": ["ICON_VIP", "ICON_CALL"]
+      },
+      "payment": {
+        "total": 4500,
+        "paid": 0,
+        "method": null,
+        "flags": {
+          "noCashbox": false,
+          "payLater": true,
+          "partial": false
+        }
+      }
+    },
+    {
+      "id": "apt_2",
+      "branchId": "br_1",
+      "doctorId": "doc_1",
+      "roomId": "room_1",
+      "start": "2025-12-12T10:00:00Z",
+      "end": "2025-12-12T10:30:00Z",
+      "status": "CONFIRMED",
+      "source": "ONLINE",
+      "patient": {
+        "id": "pt_2",
+        "fullName": "Петрова Мария Сергеевна",
+        "phone": "+7 (999) 234-56-78",
+        "icons": []
+      },
+      "payment": {
+        "total": 4500,
+        "paid": 4500,
+        "method": "CARD",
+        "flags": {
+          "noCashbox": false,
+          "payLater": false,
+          "partial": false
+        }
+      }
+    },
+    {
+      "id": "apt_3",
+      "branchId": "br_1",
+      "doctorId": "doc_2",
+      "roomId": "room_2",
+      "start": "2025-12-12T11:00:00Z",
+      "end": "2025-12-12T11:20:00Z",
+      "status": "ARRIVED",
+      "source": "FRONT_DESK",
+      "patient": {
+        "id": "pt_3",
+        "fullName": "Сидоров Петр Александрович",
+        "phone": "+7 (999) 345-67-89",
+        "icons": ["ICON_VIP"]
+      },
+      "payment": {
+        "total": 3000,
+        "paid": 3000,
+        "method": "CASH",
+        "flags": {
+          "noCashbox": false,
+          "payLater": false,
+          "partial": false
+        }
+      }
+    },
+    {
+      "id": "apt_4",
+      "branchId": "br_2",
+      "doctorId": "doc_3",
+      "roomId": "room_3",
+      "start": "2025-12-12T14:00:00Z",
+      "end": "2025-12-12T14:30:00Z",
+      "status": "CANCELED",
+      "source": "ONLINE",
+      "patient": {
+        "id": "pt_1",
+        "fullName": "Иванов Иван Иванович",
+        "phone": "+7 (999) 123-45-67",
+        "icons": ["ICON_VIP", "ICON_CALL"]
+      },
+      "payment": {
+        "total": 4500,
+        "paid": 0,
+        "method": null,
+        "flags": {
+          "noCashbox": false,
+          "payLater": false,
+          "partial": false
+        }
+      }
+    }
+  ],
+  "medicalRecords": [
+    {
+      "appointmentId": "apt_1",
+      "locked": false,
+      "lockReason": null,
+      "sections": {
+        "complaints": "Головная боль, головокружение",
+        "anamnesis": "Хроническая мигрень, наблюдается у невролога 2 года",
+        "examination": "АД 120/80, ЧСС 72. Неврологический статус без особенностей",
+        "diagnoses": [
+          {
+            "text": "Мигрень без ауры",
+            "code": "G43.0"
+          }
+        ],
+        "orders": "МРТ головного мозга",
+        "procedures": "Массаж шейно-воротниковой зоны",
+        "epicrisis": "Пациент направлен на дополнительное обследование"
+      },
+      "signature": {
+        "status": "NOT_SIGNED",
+        "signedAt": null,
+        "signedBy": null
+      }
+    },
+    {
+      "appointmentId": "apt_3",
+      "locked": false,
+      "lockReason": null,
+      "sections": {
+        "complaints": "Кашель, насморк",
+        "anamnesis": "ОРВИ, болеет 3 дня",
+        "examination": "Температура 37.2, гиперемия зева",
+        "diagnoses": [
+          {
+            "text": "Острая респираторная вирусная инфекция",
+            "code": "J00"
+          }
+        ],
+        "orders": "ОАК, ОАМ",
+        "procedures": "",
+        "epicrisis": "Рекомендовано симптоматическое лечение"
+      },
+      "signature": {
+        "status": "SIGNED",
+        "signedAt": "2025-12-12T11:30:00Z",
+        "signedBy": "doc_2"
+      }
+    }
+  ],
+  "inventoryItems": [
+    {
+      "id": "inv_1",
+      "branchId": "br_1",
+      "name": "Гель для УЗИ",
+      "category": "MED_CONSUMABLES",
+      "unit": "pcs",
+      "stock": 42,
+      "minStock": 10
+    },
+    {
+      "id": "inv_2",
+      "branchId": "br_1",
+      "name": "Парацетамол 500мг",
+      "category": "DRUGS",
+      "unit": "pcs",
+      "stock": 150,
+      "minStock": 50
+    },
+    {
+      "id": "inv_3",
+      "branchId": "br_1",
+      "name": "Одноразовые перчатки",
+      "category": "MED_CONSUMABLES",
+      "unit": "pcs",
+      "stock": 500,
+      "minStock": 200
+    },
+    {
+      "id": "inv_4",
+      "branchId": "br_1",
+      "name": "Тонометр автоматический",
+      "category": "MED_DEVICES",
+      "unit": "pcs",
+      "stock": 5,
+      "minStock": 2
+    },
+    {
+      "id": "inv_5",
+      "branchId": "br_2",
+      "name": "Гель для УЗИ",
+      "category": "MED_CONSUMABLES",
+      "unit": "pcs",
+      "stock": 30,
+      "minStock": 10
+    },
+    {
+      "id": "inv_11",
+      "branchId": "br_1",
+      "name": "Одноразовая пеленка",
+      "category": "MED_CONSUMABLES",
+      "unit": "pcs",
+      "stock": 200,
+      "minStock": 50
+    }
+  ],
+  "audit": [
+    {
+      "ts": "2025-12-12T08:00:00Z",
+      "userId": "u1",
+      "action": "APPOINTMENT_CREATE",
+      "entityType": "APPOINTMENT",
+      "entityId": "apt_1",
+      "branchId": "br_1",
+      "diff": {
+        "status": {
+          "from": null,
+          "to": "BOOKED"
+        }
+      }
+    },
+    {
+      "ts": "2025-12-12T09:15:00Z",
+      "userId": "u2",
+      "action": "APPOINTMENT_STATUS_CHANGE",
+      "entityType": "APPOINTMENT",
+      "entityId": "apt_2",
+      "branchId": "br_1",
+      "diff": {
+        "status": {
+          "from": "BOOKED",
+          "to": "CONFIRMED"
+        }
+      }
+    },
+    {
+      "ts": "2025-12-12T10:30:00Z",
+      "userId": "u1",
+      "action": "PATIENT_UPDATE",
+      "entityType": "PATIENT",
+      "entityId": "pt_1",
+      "branchId": "br_1",
+      "diff": {
+        "phone": {
+          "from": "+7 (999) 123-45-66",
+          "to": "+7 (999) 123-45-67"
+        }
+      }
+    }
+  ],
+  "patientIcons": [
+    {
+      "id": "ICON_VIP",
+      "emoji": "⭐",
+      "label": "VIP пациент",
+      "isActive": true
+    },
+    {
+      "id": "ICON_CALL",
+      "emoji": "📞",
+      "label": "Требуется звонок",
+      "isActive": true
+    },
+    {
+      "id": "ICON_DISCOUNT",
+      "emoji": "💳",
+      "label": "Скидка",
+      "isActive": true
+    },
+    {
+      "id": "ICON_ALLERGY",
+      "emoji": "⚠️",
+      "label": "Аллергия",
+      "isActive": true
+    }
+  ],
+  "files": [
+    {
+      "id": "f_1",
+      "title": "Результаты МРТ.pdf",
+      "kind": "PDF",
+      "size": 123456,
+      "createdAt": "2025-12-10T10:00:00Z",
+      "createdBy": "u2",
+      "entityType": "APPOINTMENT",
+      "entityId": "apt_1",
+      "downloadUrl": "/api/v1/files/f_1/download",
+      "previewUrl": "/api/v1/files/f_1/preview"
+    },
+    {
+      "id": "f_2",
+      "title": "Анализ крови.jpg",
+      "kind": "IMAGE",
+      "size": 45678,
+      "createdAt": "2025-12-11T14:30:00Z",
+      "createdBy": "u1",
+      "entityType": "PATIENT",
+      "entityId": "pt_2",
+      "downloadUrl": "/api/v1/files/f_2/download",
+      "previewUrl": "/api/v1/files/f_2/preview"
+    }
+  ],
+  "scheduleSlots": [
+    {
+      "doctorId": "doc_1",
+      "branchId": "br_1",
+      "from": "2025-12-12T00:00:00Z",
+      "to": "2025-12-13T00:00:00Z",
+      "slots": [
+        {
+          "start": "2025-12-12T09:00:00Z",
+          "end": "2025-12-12T09:30:00Z",
+          "free": false,
+          "appointmentId": "apt_1"
+        },
+        {
+          "start": "2025-12-12T09:30:00Z",
+          "end": "2025-12-12T10:00:00Z",
+          "free": true
+        },
+        {
+          "start": "2025-12-12T10:00:00Z",
+          "end": "2025-12-12T10:30:00Z",
+          "free": false,
+          "appointmentId": "apt_2"
+        }
+      ]
+    }
+  ]
+}
