@@ -1,5 +1,5 @@
 {
-  "api/v1/users": [
+  "users": [
     {
       "id": 1,
       "name": "Ирина Петрова",
@@ -25,7 +25,7 @@
       "branchScope": [1, 2]
     }
   ],
-  "api/v1/me": [
+  "me": [
     {
       "user": {
         "id": 1,
@@ -43,7 +43,7 @@
       }
     }
   ],
-  "api/v1/services": [
+  "services": [
     {
       "id": 1,
       "branchId": 1,
@@ -66,7 +66,7 @@
       "inventoryAutoWriteOff": []
     }
   ],
-  "api/v1/patients": [
+  "patients": [
     {
       "id": 1,
       "fullName": "Иванов Иван Иванович",
@@ -82,7 +82,7 @@
       "dob": "1985-05-20"
     }
   ],
-  "api/v1/medicalRecords": [
+  "medicalRecords": [
     {
       "appointmentId": 1,
       "locked": false,
@@ -133,5 +133,6 @@
     }
   ]
 }
+
 
 
