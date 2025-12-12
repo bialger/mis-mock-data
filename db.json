@@ -2,24 +2,28 @@
   "users": [
     {
       "id": 1,
+      "login": "petrova_admin",
       "name": "Ирина Петрова",
       "role": "ADMIN",
       "branchScope": [1, 2]
     },
     {
       "id": 2,
-      "name": "Доктор Иванов",
+      "login": "ivanov_doctor",
+      "name": "Петр Иванов",
       "role": "DOCTOR",
       "branchScope": [1]
     },
     {
       "id": 3,
-      "name": "Главный врач Сидоров",
+      "login": "sidorov_head",
+      "name": "Игорь Сидоров",
       "role": "HEAD",
       "branchScope": [1, 2]
     },
     {
       "id": 4,
+      "login": "sysadmin",
       "name": "Системный администратор",
       "role": "SYSADMIN",
       "branchScope": [1, 2]
@@ -29,7 +33,7 @@
     {
       "user": {
         "id": 3,
-        "name": "Главный врач Сидоров",
+        "name": "Игорь Сидоров",
         "role": "HEAD"
       },
       "branchScope": [1, 2],
@@ -234,6 +238,7 @@
     }
   ]
 }
+
 
 
 
